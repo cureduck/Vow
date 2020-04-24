@@ -105,7 +105,7 @@ namespace View
 
         private void Start()
         {
-            TextTemp.desc = descriptionArea;
+            TextTemp.descArea = descriptionArea;
             SetOwner(owner);
         }
     }

@@ -11,21 +11,24 @@ namespace View
     {
         public Animal owner;
 
-        [SerializeField]
-        private Slider HpSlider;
-        [SerializeField]
-        private Slider SpSlider;
-        [SerializeField]
+        private Slider hpSlider;
+        private Slider spSlider;
         private TMP_Text hpText;
-        [SerializeField]
         private TMP_Text spText;
 
         private void UpdateUI()
         {
-            HpSlider.value = (float)owner.curHp / (float)owner.maxHp;
-            SpSlider.value = (float)owner.curSp / (float)owner.maxSp;
+            hpSlider.value = (float)owner.curHp / (float)owner.maxHp;
+            spSlider.value = (float)owner.curSp / (float)owner.maxSp;
             hpText.text = owner.curHp + "/" + owner.maxHp;
             spText.text = owner.curSp + "/" + owner.maxSp;
+        }
+        private void Awake()
+        {
+            hpSlider = transform.Find("HpBar").GetComponent<Slider>();
+            spSlider = transform.Find("SpBar").GetComponent<Slider>();
+            hpText = transform.Find("HpText").GetComponent<TMP_Text>();
+            spText = transform.Find("SpText").GetComponent<TMP_Text>();
         }
 
         void Start()

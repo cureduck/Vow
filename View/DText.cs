@@ -10,29 +10,32 @@ using UnityEngine.EventSystems;
 
 namespace View
 {
+    /// <summary>
+    /// 最常用的信息栏模板，包含本体字符串和描述字符串，点击后将描数字符串打在描数框内
+    /// </summary>
     public class DText:MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IPointerExitHandler,IPointerUpHandler
     {
 
-        public TMP_Text desc;
+        public TMP_Text descArea;
         [SerializeField]
-        private TMP_Text here;
+        private TMP_Text thisArea;
         private string description;
 
         public void Set(Tuple<string,string> data)
         {
-            here.text = data.Item1;
+            thisArea.text = data.Item1;
             description = data.Item2;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            here.fontSize -= 2;
-            desc.text = description;
+            thisArea.fontSize -= 2;
+            descArea.text = description;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            here.fontSize += 2;
+            thisArea.fontSize += 2;
         }
 
         
@@ -44,12 +47,12 @@ namespace View
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            here.fontSize += 1;
+            thisArea.fontSize += 1;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            here.fontSize -= 1;
+            thisArea.fontSize -= 1;
         }
 
 

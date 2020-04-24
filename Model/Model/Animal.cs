@@ -44,7 +44,6 @@ namespace Model
         public event Action Death;
         public event Action StatusUpdated;
 
-
         #endregion
 
         #region methods
@@ -96,6 +95,36 @@ namespace Model
                 UpdateAttr();
             }
         }
+
+        internal void HealHp(int point)
+        {
+            curHp = Math.Min(maxHp, point + curHp);
+        }
+
+        internal void HealSp(int point)
+        {
+            curSp = Math.Min(maxSp, point + curSp);
+        }
+
+        internal void TakeHpDmg(int point)
+        {
+            curHp = Math.Max(0, curHp - point);
+            if (curHp == 0)
+                Die();
+        }
+
+
+        internal void TakeSpDmg(int point)
+        {
+            curSp = Math.Max(0, curSp - point);
+        }
+
+        internal void Die()
+        {
+            Death();
+        }
+
+
         #endregion
     }
 }
