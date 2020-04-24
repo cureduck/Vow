@@ -12,6 +12,7 @@ namespace View
 {
     public class DText:MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IPointerExitHandler,IPointerUpHandler
     {
+
         public TMP_Text desc;
         [SerializeField]
         private TMP_Text here;

@@ -20,7 +20,10 @@ namespace View
         }
 
 
+        void Test()
+        {
 
+        }
         void Update()
         {
             Move2Mouse();

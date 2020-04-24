@@ -59,6 +59,11 @@ namespace Model
             agent.SetDestination(destiantion);
         }
 
+        public void Test()
+        {
+
+        }
+
 
         private Tuple<string,string>[] GetStatus()
         {
