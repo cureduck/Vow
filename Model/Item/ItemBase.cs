@@ -15,7 +15,7 @@ namespace Model
         private static Sprite _sprite;
         public Sprite sprite { get => _sprite;}
 
-        internal static void Set(Sprite s)
+        public static void Set(Sprite s)
         {
             _sprite = s;
         }

@@ -35,6 +35,8 @@ namespace View
             here.fontSize += 2;
         }
 
+        
+
         private void Awake()
         {
             //here = GetComponent<TMP_Text>();
